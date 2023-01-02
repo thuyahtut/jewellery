@@ -6,7 +6,7 @@
             name="customer_product_qrcode.customer_qr_template"
             file="customer_product_qrcode.customer_qr_template"
             string="Badge"
-            report_type="qweb-pdf"
+            report_type="qweb-html"
                 menu="False"
         />
         <report id="customer_product_qrcode.print_qr1"
@@ -14,7 +14,7 @@
             name="customer_product_qrcode.customer_qr_template"
             file="customer_product_qrcode.customer_qr_template"
             string="Product Badge"
-            report_type="qweb-pdf"
+            report_type="qweb-html"
                 menu="False"
         />
         <report id="customer_product_qrcode.print_qr2"
@@ -22,7 +22,7 @@
             name="customer_product_qrcode.customer_qr_template"
             file="customer_product_qrcode.customer_qr_template"
             string="Product Badge"
-            report_type="qweb-pdf"
+            report_type="qweb-html"
                 menu="False"
         />
         <record id="customer_product_qrcode.print_qr" model="ir.actions.report">
