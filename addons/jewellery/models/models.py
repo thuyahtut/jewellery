@@ -18,5 +18,7 @@ class ProductTemplate(models.Model):
     total_weight = fields.Float(string='Total Weight', digits='Product Unit of Measure')
     diamond_weight = fields.Float(string='Diamond Weight', digits='Product Unit of Measure')
     jewel_pieces_ids = fields.One2many('jewel.pieces', 'template_id', string='Jewel Pieces')
+
+    default_code = fields.Text(string='Internal Reference')
     
 

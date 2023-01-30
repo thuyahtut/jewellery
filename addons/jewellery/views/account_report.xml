@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_invoice_document_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//table/thead/tr/th[@name='th_description']" position="after">
+            <th name="th_product_name" class="text-start"><span>Product</span></th>
+            <th name="th_total_weight" class="text-start"><span>Total Weight</span></th>
+            <th name="th_total_weight" class="text-start"><span>Diamond Weight</span></th>
+        </xpath>
+
+        <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+            <td name="product_name"><span t-field="line.product_id.name" t-options="{'widget': 'text'}"/></td>
+            <td name="product_name"><span t-field="line.product_id.total_weight" t-options="{'widget': 'text'}"/></td>
+            <td name="product_name"><span t-field="line.product_id.diamond_weight" t-options="{'widget': 'text'}"/></td>
+        </xpath>
+
+        <!-- Hide tax column -->
+        <xpath expr="//th[@name='th_taxes']" position="replace">
+        </xpath>
+        <xpath expr="//span[@id='line_tax_ids']" position="replace">
+        </xpath>
+    </template>
+
+</odoo>

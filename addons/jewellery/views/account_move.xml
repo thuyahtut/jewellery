@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+      <record id="account_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+          <xpath expr="//header/button[last()]" position="after">
+            <field name="att_view" invisible="1"/>
+            <button 
+            attrs="{ 'invisible': [('att_view', '=', True)] }"
+            string="Show Attach:" name="action_show_attach" type="object" class="oe_highlight"/>
+            
+            <button 
+            attrs="{ 'invisible': [('att_view', '=', False)] }"
+            string="Hide Attach:" name="action_hide_attach" type="object" class="oe_highlight"/>
+          </xpath>
+          <xpath expr="//div[hasclass('o_attachment_preview')]" position="replace">
+            <!-- OLD CONDITION -->
+            <!-- <div class="o_attachment_preview" attrs="{'invisible': ['|',('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')),('state', '!=', 'draft')]}"/> -->
+            <div class="o_attachment_preview" attrs="{'invisible': [('att_view', '=', False)]}"/>
+          </xpath>
+        </field>
+      </record>
+    </data>
+</odoo>

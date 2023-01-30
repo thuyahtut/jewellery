@@ -26,3 +26,12 @@ class AccountMove(models.Model):
         if self.journal_id.payment_sequence and is_payment:
             starting_sequence = "P" + starting_sequence
         return starting_sequence
+
+
+    att_view = fields.Boolean("Show or Hide Attch:")
+    # <div class="o_attachment_preview" attrs="{'invisible': ['|',('move_type', 'not in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')),('state', '!=', 'draft')]}"/>
+    def action_show_attach(self):
+        self.update({'att_view': True})
+    
+    def action_hide_attach(self):
+        self.update({'att_view': False})
