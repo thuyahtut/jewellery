@@ -28,6 +28,7 @@
         'views/product_template_views.xml',
         # 'views/account_move.xml',
         'views/account_report.xml',
+        'report/product_product_template.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
