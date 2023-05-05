@@ -11,12 +11,12 @@
           <label for="total_weight"/>
             <div class="o_row">
                 <field name="total_weight" />
-                <span><field name="weight_uom_name"/></span>
+                <span><field name="uom_name"/></span>
             </div>
           <label for="diamond_weight"/>
             <div class="o_row">
                 <field name="diamond_weight" />
-                <span><field name="weight_uom_name"/></span>
+                <span><field name="uom_name"/></span>
             </div>
         </xpath>
 

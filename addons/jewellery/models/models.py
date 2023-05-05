@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.fields import Command
 
 class JewelPieces(models.Model):
     _name = 'jewel.pieces'
@@ -21,4 +22,28 @@ class ProductTemplate(models.Model):
 
     default_code = fields.Text(string='Internal Reference')
     
+
+class SaleAdvancePaymentInvInherit(models.TransientModel):
+    _inherit = 'sale.advance.payment.inv'
+
+    def _prepare_down_payment_product_values(self):
+        self.ensure_one()
+        data =  {
+            'name': _('Down payment'),
+            'type': 'service',
+            'invoice_policy': 'order',
+            'company_id': False,
+            'uom_id': self.env.ref('uom.product_uom_unit').id,
+            'uom_po_id': self.env.ref('uom.product_uom_unit').id,
+            'property_account_income_id': self.deposit_account_id.id,
+            'taxes_id': [Command.set(self.deposit_taxes_id.ids)],
+        }
+        return data
+
+
+
+
+
+
+
 

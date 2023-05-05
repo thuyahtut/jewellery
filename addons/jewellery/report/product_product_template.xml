@@ -10,6 +10,9 @@
                         <strong t-field="product.name"/>
                     </div>
                     <div class="o_label_data">
+                        <div class="text-center o_label_right_column">
+                            <img  t-att-src="image_data_uri(product.product_variant_id.qr)" style="height:auto;max-width:100px;padding:inherit;" />
+                        </div>
                         <div class="text-center o_label_left_column">
                             <span class="text-nowrap" t-field="product.default_code"/>
                             <t t-if="barcode">
@@ -113,6 +116,9 @@
                         <span t-if="product.is_product_variant" t-field="product.name"/>
                         <span t-else="" t-field="product.name"/>
                     </div>
+                    <div class="text-center o_label_right_column">
+                            <img  t-att-src="image_data_uri(product.product_variant_id.qr)" style="height:auto;max-width:50px;padding:inherit;" />
+                        </div>
                     <div class="o_label_left_column">
                         <small class="text-nowrap" t-field="product.default_code"/>
                     </div>

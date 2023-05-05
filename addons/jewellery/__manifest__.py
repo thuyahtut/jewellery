@@ -20,13 +20,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account', 'product','web'],
+    'depends': ['base', 'account', 'product','web', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
         'views/product_template_views.xml',
-        # 'views/account_move.xml',
+        'views/invoice_reports.xml',
         'views/account_report.xml',
         'report/product_product_template.xml',
     ],
