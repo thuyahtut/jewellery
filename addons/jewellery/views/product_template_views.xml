@@ -8,6 +8,8 @@
 
         <!-- Weight -->
         <xpath expr="//group[@name='group_general']/field[last()]" position="after">
+          <field name="uom_id" groups="base.group_no_one"/>
+          <field name="uom_po_id" groups="base.group_no_one"/>
           <label for="total_weight"/>
             <div class="o_row">
                 <field name="total_weight" />
